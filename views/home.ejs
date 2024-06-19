@@ -1,0 +1,45 @@
+    <%- include("partials/header.ejs") %>
+
+    <body id="home-body" class="text-bg-info p-3">
+      <header id="home-header">
+        <br><h1 class="display-5"> OptionSee Flights </h1>
+        <button onclick="location.href='/user/logout'" type="button" class="btn btn-primary">
+          Logout
+        </button>
+          <button onclick="location.href='/user/profile'" class="btn btn-primary"> Check Profile </button>
+        <br></header>
+      <hr>
+
+      <h2>Flight Search</h2>
+      <i>Please search for a flight by Location and Departure Date.</i> <br><br>
+      <% if (typeof user != "undefined") { %>
+        <h3>Welcome <%=user[0].userName%></h3>
+      <% } %>
+      <form action="/home" method="post">
+        <label for="destination">Destination:</label>
+        <select id="destination" name="destination" required>
+          <option value="" disabled selected>Select a Destination</option>
+          <% locations.forEach(location => { %>
+            <option value="<%= location.locationId %>">
+              <%= location.state ? `${location.city}, ${location.state}, ${location.country}` : `${location.city}, ${location.country}` %>
+            </option>
+          <% }); %>
+        </select>
+        <br>
+        <label for="departureDate">Departure Date:</label>
+        <input type="date" id="departureDate" name="departureDate" required>
+            
+        <br><br>
+        <% if (typeof number != "undefined") { %>
+          <input type="hidden" name="confirmation" value="<%=number%>" >
+        <% } %>
+        <% if (typeof user != "undefined") { %>
+          <input type="hidden" name="userId" value="<%=user[0].userId%>" >
+        <% } %>
+        <button type="submit" id="searchBtn">SEARCH FLIGHTS</button>
+      </form>
+
+      <%- include("partials/footer.ejs") %>
+      <script src="/js/scripts.js"></script>
+    </body>
+    </html>

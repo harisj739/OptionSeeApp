@@ -1,0 +1,192 @@
+#loginInfo {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #2226aa;
+  border-radius: 24px;
+  position: absolute;
+  bottom: 30px;
+  height: 350px;
+  margin-left: 450px;
+  color: white;
+  background-color: #138cd8;
+}
+.project-logo {
+        top:0;
+        left: 0;
+        margin-right:200px;
+        padding: 15px;      
+}
+.plane {
+        width: 60px;
+        height: 60px;
+        margin-left:200px;
+        margin-bottom: 200px;
+        
+}
+
+#profileHeader, #bookingHeader {
+  color: white;
+  background-color: #138cd8;
+  padding: 5px 10px;
+  margin-bottom: 0px;
+  border-bottom: 1px solid #222dc9;
+  border-left: 1px solid #222dc9;
+  border-right: 1px solid #222dc9;
+}
+
+#login {
+  display: flex;
+  flex-direction: row;
+  padding: 5px 10px;
+}
+
+#sex {
+  padding: 12px 43px;
+}
+
+#password {
+  padding: 0px 17px;
+}
+
+#lastName {
+  padding: 0px 15px;
+}
+
+#bookingInfo {
+  display: flex;
+  flex-direction: row;
+  /* border-bottom: 1px solid #000; */
+  /* border: 1px solid #271cc4; */
+  justify-content: center;
+}
+
+#bookingsBody {
+  background-color: #6eb6e2;
+}
+
+#profileBody {
+  background-image: url("/img/airplane.png");
+}
+
+.profileBtns {
+  background-color: #138cd8;
+  border-radius: 6px;
+  border: 1px solid #2226aa;
+  padding: 5px 22px;
+}
+
+.profileBtns:hover {
+  color: white;
+  background-color: #03324f;
+  border: 1px solid #2226aa;
+}
+
+#updateBtn {
+  color: white;
+  background-color: #219148;
+  border-radius: 6px;
+  width: 200px;
+  margin-left: 200px;
+  padding: 5px 5px;
+}
+
+#updateBtn:hover {
+  color: white;
+  background-color: #104c25;
+  border-radius: 6px;
+  border: 1px solid #092f0d;
+}
+
+#searchBtn {
+  color: white;
+  background-color: #219148;
+  border-radius: 6px;
+  padding: 5px 10px;
+  text-align: center;
+}
+
+#searchBtn:hover {
+  color: white;
+  background-color: #104c25;
+  border-radius: 6px;
+  border: 1px solid #092f0d;
+}
+
+#deleteBtn:hover {
+  color: white;
+  background-color: #770e13;
+  border-radius: 6px;
+  border: 1px solid #3c0606;
+}
+
+.link {
+  color: white;
+  text-decoration: none;
+}
+
+#airlineLogo {
+  width: 100px;
+  height: 100px;
+}
+
+#bookingOne {
+  padding: 5px 20px;
+  border: 1px solid #271cc4;
+  background-color: #138cd8;
+  color: white;
+}
+
+#bookingTwo {
+  padding: 5px 20px;
+  background-color: #2226aa;
+  color: white;
+}
+
+body {
+  background-color: #9db9ec;
+  margin: 5px;
+  text-align: center;
+}
+
+input {
+  margin: 5px;
+  padding: 5px;
+  border-radius: 4px;
+}
+
+button {
+  background-color: #f08989;
+  border-radius: 4px;
+  margin: 5px;
+}
+
+footer {
+  text-align: center;
+}
+
+header {
+  text-align: center;
+}
+
+
+#results-form-div {
+  display: flex;
+  font-size: 1.5em;
+  border-style: single;
+  border-radius: 5px;
+  margin: 16px;
+}
+
+#booking-info-div {
+  font-size: 1.2em;
+}
+
+.result-column {
+  flex: 50%;
+}
+
+.result {
+  border-style: solid;
+  padding: 6px;
+  background-color: #d1d1f5;
+}

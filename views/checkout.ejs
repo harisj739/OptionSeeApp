@@ -1,0 +1,56 @@
+<!-- Checkout Page -->
+<%- include("partials/header.ejs") %>
+
+<body id="checkout-body" class="text-bg-info p-3">
+  <header>
+    <h1 class="display-5">Confirm Booking</h1>
+  </header><hr>
+  <div id="checkout-main">
+      <form method="POST" action="/checkout">
+        <% if (typeof ticket != "undefined") { %>
+          <div id="booking-info-div">
+            <p>Destination: <%=ticket[0].city%>, <%=ticket[0].state%></p>
+            <p>Departure date: <%=ticket[0].tempDptDate.toDateString()%></p>
+            <p>Departure time: <%=ticket[0].tempDptTime%></p>
+            <p>Arrival time: <%=ticket[0].tempArrTime%></p>
+            <p>Number of tickets: <%=ticket[0].tempNumTickets%></p>
+            <p>Total Cost: $<%=ticket[0].totalCost%>.00</p>
+            <h4>Complete Purchase</h4>
+            <button id="checkout-button" class="btn btn-primary">Submit</button>
+          </div>
+        <% } %>
+
+        <% if (typeof ticket != "undefined") { %>
+          <input type="hidden" name="userId" value="<%=ticket[0].userId%>">
+          <input type="hidden" name="dptTime" value="<%=ticket[0].tempDptTime%>" >
+          <input type="hidden" name="totalCost" value="<%=ticket[0].totalCost%>" >
+          <input type="hidden" name="numTickets" value="<%=ticket[0].tempNumTickets%>" >
+          <input type="hidden" name="confirmation" value="<%=ticket[0].tempConf%>" >
+        <% } %>
+
+      </form>
+  </div>
+  <div id="confirmation-div">
+    <% if (typeof message != "undefined") { %>
+      <p><%=message%></p>
+    <% } %>
+  </div>
+
+  <form method="POST" action="/results/cancel">
+    <% if (typeof ticket != "undefined") { %>
+      <input type="hidden" name="confirmation" value="<%=ticket[0].tempConf%>" >
+      <input type="hidden" name="userId" value="<%=ticket[0].userId%>" >
+      <button type="submit" onclick="return confirm('Are you sure you want to cancel?')" class="btn btn-primary">Cancel</button>
+    <% } %>
+    
+        
+  <div>
+    <a href='/'>Return to Login</a>
+    <a href='/home'>Return to Home</a>
+  </div>
+
+<%- include("partials/footer.ejs") %>
+<script src="/js/scriptCheckout.js"></script>
+</body>
+
+</html>

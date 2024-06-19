@@ -1,0 +1,50 @@
+<%- include("partials/header.ejs") %>
+
+<body id="bookingsBody" class="text-bg-info p-3">
+  <h1 id="bookingHeader"> <em> Your Booking History </em> </h1>
+  <nav>
+    <button class="profileBtns">
+      <a href="/home" class="link"> 
+        Home
+      </a>
+      </button>
+
+    <button class="profileBtns">
+      <a href="/user/profile" class="link"> 
+        Back to Profile
+      </a>
+    </button>
+
+    <button class="profileBtns">
+      <a href="/user/logout" class="link">
+      Logout
+      </a>
+    </button>
+  </nav><br>
+  <i>Please use full airline name when searching. For example: "American Airlines".</i> <br>
+  
+   <form action="#">
+     SEARCH:
+     <input type="text" class="enterInput" name="keyword" placeholder="Airline Name"> 
+     <br><br>
+   </form>
+  <% for (b of booking) { %>
+    <div id="bookingInfo">
+      <div id="bookingOne">
+        <%= b.airlineName %> <br><br>
+        <img src="<%= b.logo %>" id="airlineLogo"> <br><br>
+      </div>
+      <div id="bookingTwo">
+        Departure Date: <%= b.depDate %> <br><br>
+        Destination: <%= b.city %>, <%= b.state %> <br><br>
+        Tickets Purchased: <%= b.ticketsBought %> <br><br>
+        Total Cost: $<%=b.totalCost%> <br><br>
+      </div>
+    </div> <br>
+  <% } %>
+     <% if (typeof message != "undefined") { %>
+       <h3> <%= message %> </h3>
+     <% } %>
+</body>
+
+</html>

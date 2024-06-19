@@ -1,0 +1,94 @@
+<%- include("partials/header.ejs") %>
+<body id="profileBody">
+  <h2 id="profileHeader"> <em> @<%=users[0].userName%>'s Profile  </em> 
+  </h2>
+
+  <nav>
+    <button class="profileBtns">
+      <a href="/home" class="link"> 
+        Back to Home
+      </a>
+    </button>
+
+    <button class="profileBtns">
+      <a href="/user/history/<%=users[0].userId%>" class="link">
+      See Booking History
+      </a>
+    </button>
+
+    <button class="profileBtns">
+      <a href="/user/logout" class="link">
+      Logout
+      </a>
+    </button>
+
+    <button id="deleteBtn" class="profileBtns">
+      <a href="/user/delete?userId=<%=users[0].userId%>" class="link">
+      Delete Profile
+      </a>
+    </button>
+  </nav> <br>
+
+    <form method="POST" id="loginInfo" class="formInput" action="/user/profile"> 
+      <div id="login">
+        <div>
+          Username:
+          <input type="text" name="username" value="<%=users[0].userName%>">
+        </div>
+        <div id="password"> 
+          Password:
+          <input type="password" name="pswd" value="<%=users[0].password%>">
+        </div>
+      </div>
+      <div id="login">
+        <div>
+          First Name:
+          <input type="text" name="firstName" value="<%=users[0].fName%>">
+        </div>
+        <div id="lastName">
+          Last Name:
+          <input type="text" name="lastName" value="<%=users[0].lName%>">
+        </div>
+      </div>
+      <div id="login">
+        <div>
+          Date of Birth:
+           <input type="date" name="dob" value="<%=users[0].dobISO%>"><br>
+        </div>
+
+        <div id="sex">
+           Sex:  
+            <input type="radio" class="enterInput" 
+            name="sex" value="M" 
+
+            <% if (users[0].sex == "M") { %>
+              checked 
+            <% } %>
+
+            > Male
+
+            <input type="radio" class="enterInput" 
+            name="sex" value="F" 
+
+            <% if (users[0].sex == "F") { %>
+              checked 
+            <% } %>
+
+            > Female
+        </div>
+      </div>
+
+       <div>
+         Email Address:
+         <input type="text" name="email" value="<%=users[0].email%>"> <br>
+       </div>
+
+       <div>
+         Phone Number:
+         <input type="tel" name="phone" value="<%=users[0].phone%>"> <br>
+       </div> <br>
+
+        <button id="updateBtn"> UPDATE PROFILE </button>
+    </form> <br> <br>
+</body>
+</html>

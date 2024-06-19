@@ -1,0 +1,27 @@
+<%- include("partials/header.ejs") %>
+
+<body id="index-body" class="text-bg-info p-3">
+  <header id="index-header">
+    <br><h1 class="display-5"> Welcome to OptionSee Flights! </h1>
+    <i>Please enter your login credentials below, or click "Create a New Account"</i>
+    <br></header><hr>
+  
+  <h2>Login</h2>
+  <form method="POST" action="/login">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required>
+      <br>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+      <br>
+      <button type="submit" class="btn btn-primary">Sign In</button>
+  </form><br>
+  
+  <% if (typeof message != "undefined"){ %>
+    <h3><%=message%></h3>
+  <% } %>
+
+  <h3>New to OptionSee?</h3>
+  <button onclick="location.href='/register'" class="btn btn-primary">Create a New Account</button>
+
+<%- include("partials/footer.ejs") %>
